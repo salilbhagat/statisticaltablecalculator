@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="css/navbar.css" rel="stylesheet">
+        <link href="css/tooltip.css" rel="stylesheet">
+        <title>S.T. CALCULATOR</title>
+    </head>
+    <body>
+        <ul>
+            <li><a  href="index.html">STATISTICAL TABLE CALCULATOR ></a></li>
+            <li ><a  href="#" >4X</a></li>
+        </ul>
+        <br><br><br>
+        <form>
+            <table border="1px" align="left" cellpadding="10px" style="font-size: 25px">
+                <thead>
+                    <tr>
+                        <th colspan="2" style="background-color: #4CAF50;color: white;">
+                            FREQUENCY DISTRIBUTION TABLE
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <input size="1.5" type="text" value="Sr.no" disabled/>
+                            <input size="4"  type="text" value="C" disabled/> -
+                            <input size="4" type="text" value="I"  disabled/> 
+                            <input size="4" type="text" value="Freq.(F)" disabled/>
+                            <br>
+                            <input size="1.5" type="text" value="1" disabled/>
+                            <input size="4" type="text" id="Num1" value="0" onblur="Calc();"/> -
+                            <input size="4" type="text" id="Num2" value="10" onblur="Calc();"/> 
+                            <input size="4" type="text" id="F1" value="5" onblur="Calc();"/>                           
+                            <br>
+                            <input size="1.5" type="text" value="2" disabled/>
+                            <input size="4" type="text" id="Num3" value="10" onblur="Calc();"/> -
+                            <input size="4" type="text" id="Num4" value="20" onblur="Calc();"/> 
+                            <input size="4" type="text" id="F2" value="7" onblur="Calc();"/>
+                            <br>
+                            <input size="1.5" type="text" value="3" disabled/>
+                            <input size="4" type="text" id="Num5" value="20" onblur="Calc();"/> -
+                            <input size="4" type="text" id="Num6" value="30" onblur="Calc();"/> 
+                            <input size="4" type="text" id="F3" value="20" onblur="Calc();"/>
+                            <br>
+                            <input size="1.5" type="text" value="4" disabled/>
+                            <input size="4" type="text" id="Num7" value="30" onblur="Calc();"/> -
+                            <input size="4" type="text" id="Num8" value="40" onblur="Calc();"/> 
+                            <input size="4" type="text" id="F4" value="12" onblur="Calc();"/>
+                            <br> 
+                        </td>
+                        <td>
+                            <input size="4" type="text" value="( C - F )" disabled/>
+                            <input size="4" type="text" value="Mid(X)" disabled/>
+                            <input size="4" type="text" value="( F * X )" disabled/>
+                            <input size="4" type="text" value="( F * X²)" disabled/>
+                            <br>
+                            <input size="4" type="text" id="Cf1" value="" readonly/>
+                            <input size="4" type="text" id="Xmid1" value="" readonly/>
+                            <input size="4" type="text" id="Fx1" value="" readonly/>
+                            <input size="4" type="text" id="Fx21" value="" readonly/>
+                            <br>
+                            <input size="4" type="text" id="Cf2" value="" readonly/>
+                            <input size="4" type="text" id="Xmid2" value="" readonly/>
+                            <input size="4" type="text" id="Fx2" value="" readonly/>
+                            <input size="4" type="text" id="Fx22" value="" readonly/>
+                            <br>
+                            <input size="4" type="text" id="Cf3" value="" readonly/>
+                            <input size="4" type="text" id="Xmid3" value="" readonly/>
+                            <input size="4" type="text" id="Fx3" value="" readonly/>
+                            <input size="4" type="text" id="Fx23" value="" readonly/>
+                            <br>
+                            <input size="4" type="text" id="Cf4" value="" readonly/>
+                            <input size="4" type="text" id="Xmid4" value="" readonly/>
+                            <input size="4" type="text" id="Fx4" value="" readonly/>
+                            <input size="4" type="text" id="Fx24" value="" readonly/> 
+                        </td>   
+                    </tr>
+                    <tr>
+                        <td>
+                            <input size="1.5" type="text" value="-" disabled/>
+                            <input size="4"  type="text" value="C" disabled/> -
+                            <input size="4" type="text" value="I"  disabled/> 
+                            <input size="4" type="text" value="∑(F)" disabled/>
+                            <br>
+                            <input size="1.5" type="text" value="-" disabled/>
+                            <input size="4"  type="text" value="C" readonly/> -
+                            <input size="4" type="text" value="I"  readonly/> 
+                            <input size="4" type="text" id="Fsum" value="" readonly/>
+                            <br>
+                        </td>
+                        <td>
+                            <input size="4" type="text" value="∑(C-F)" disabled/>
+                            <input size="4" type="text" value="∑(X)" disabled/>
+                            <input size="4" type="text" value="∑( F*X )" disabled/>
+                            <input size="4" type="text" value="∑( F*X² )" disabled/>
+                            <br>
+                            <input size="4" type="text" id="Cfsum" value="" readonly/>
+                            <input size="4" type="text" id="Xsum" value="" readonly/>
+                            <input size="4" type="text" id="Fxsum" value="" readonly/>
+                            <input size="4" type="text" id="Fx2sum" value="" readonly/>
+                            <br>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        <form>
+            <table border="1px" align="center" cellpadding="10px" style="font-size: 25px">
+                <thead>
+                    <tr>
+                        <th colspan="2" style="background-color: #4CAF50;color: white;">
+                            OUTPUT TABLE
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="8" align="center">
+                            <b>MEAN</b>[ ∑( F * X ) / ∑( F ) ]<br>
+                            <input type="text" id="Mean" value=""/>
+                        </td>
+                    </tr>                   
+                    <tr>
+                        <td align="center">
+                            <b>  ENTER VALUES FOR MODE</b>
+                            <div class="tooltip" >
+                                <a href="info.html" target = "_blank">(?)</a>
+                                <span class="tooltiptext">
+                                    <a>> To determine dc,du,dd,l1</a><br>
+                                    <a>>> Find biggest frequency, that frequency is "dc"</a><br>
+                                    <a>>> The frequency above dc is "du (d up)"</a><br>
+                                    <a>>> The frequency below dc is "dd (d down)"</a><br>
+                                    <a>>> The corresponding c-i value of dc is "l1"</a><br>
+                                </span>
+                            </div>
+                            <br>
+                            <input size="4"  type="text" value="du" disabled/>
+                            <input size="4" type="text" value="dc"  disabled/>
+                            <input size="4" type="text" value="dd" disabled/> |
+                            <input size="4" type="text" value="l1" disabled/><br>
+                            <input size="4" type="text" id="Du" value="7" onblur="Calc();"/>
+                            <input size="4" type="text" id="Dc" value="20" onblur="Calc();"/>
+                            <input size="4" type="text" id="Dd" value="12" onblur="Calc();"/> |
+                            <input size="4" type="text" id="L1" value="20" onblur="Calc();"/>
+                            <hr>
+                            <input size="4"  type="text" value="d1" disabled/> -
+                            <input size="4" type="text" value="d2"  disabled/>   
+                            <br>
+                            <input size="4" type="text" id="D1" value="" onblur="Calc();"/> -
+                            <input size="4" type="text" id="D2" value="" onblur="Calc();"/>
+                            <br>
+                        </td>    
+                        <td align="center">
+                            <b>  ENTER VALUES FOR MEDIAN</b>
+                            <div class="tooltip">
+                                <a href="info.html" target = "_blank">(?)</a>
+                                <span class="tooltiptext">
+                                    <a>> To determine F and f</a><br>
+                                    <a>>> If value of n/2 is x find the value of c-f just bigger than x</a><br>
+                                    <a>>> The value above the gotten value is "F"</a><br>
+                                    <a>>> The corresponding frequency is "f"</a><br>
+                                </span>
+                            </div>
+                            <br>
+                            <input size="4" type="text" value="F"  disabled/>
+                            <input size="4" type="text" id="Fmidean" value="12" onblur="Calc();"/>
+                            <br> 
+                            <input size="4" type="text" value="f" disabled/>
+                            <input size="4" type="text" id="F2midean" value="20" onblur="Calc();"/>
+                        </td>         
+                    </tr>
+                    <tr>
+                        <td align="center"><b>MODE</b><br>[ L+[d1/(d1+d2)*h ]]<br>
+                            <input type="text" id="Mode" value=""/>
+                        </td>    
+
+                        <td align="center"><b>MEDIAN</b><br>[ L+[[n/(2)*F ]/f]*h]<br>
+                            <input type="text" id="Median" value=""/>
+                        </td>     
+                    </tr>
+                    <tr>
+                        <td align="center"><b>STD. DEVIATION</b><br>[√(F*X²/n)-((F*X)/n)²]<br>
+                            <input type="text" id="Sd" value=""/>
+                        </td>     
+
+                        <td align="center"><b>KARL PEARSON'S</b><br>[Mean-Mode/S.D.]<br>
+                            <input type="text" id="Kp" value=""/>
+                        </td>     
+                    </tr>
+                </tbody>
+            </table>
+        <script>
+            function Calc()
+            {
+                var num1 = parseInt(document.getElementById("Num1").value);
+                var num2 = parseInt(document.getElementById("Num2").value);
+                var num3 = parseInt(document.getElementById("Num3").value);
+                var num4 = parseInt(document.getElementById("Num4").value);
+                var num5 = parseInt(document.getElementById("Num5").value);
+                var num6 = parseInt(document.getElementById("Num6").value);
+                var num7 = parseInt(document.getElementById("Num7").value);
+                var num8 = parseInt(document.getElementById("Num8").value);   
+
+                var f1 = parseInt(document.getElementById("F1").value);
+                var f2 = parseInt(document.getElementById("F2").value);
+                var f3 = parseInt(document.getElementById("F3").value);
+                var f4 = parseInt(document.getElementById("F4").value);  
+
+                var du = parseInt(document.getElementById("Du").value);
+                var dc = parseInt(document.getElementById("Dc").value);
+                var dd = parseInt(document.getElementById("Dd").value);
+
+                var l1 = parseInt(document.getElementById("L1").value);
+                
+                var fmidean = parseInt(document.getElementById("Fmidean").value);
+                var f2midean = parseInt(document.getElementById("F2midean").value);
+                
+                /*--------xmid--------*/
+
+                xmid1s=(num1 + num2)/2;
+                xmid2s=(num3 + num4)/2;
+                xmid3s=(num5 + num6)/2;
+                xmid4s=(num7 + num8)/2; 
+                
+                document.getElementById("Xmid1").value = xmid1s;
+                document.getElementById("Xmid2").value = xmid2s;
+                document.getElementById("Xmid3").value = xmid3s;
+                document.getElementById("Xmid4").value = xmid4s; 
+				
+				/*-----------fx-----------*/
+                document.getElementById("Fx1").value = f1*(xmid1s);
+                document.getElementById("Fx2").value = f2*(xmid2s);
+                document.getElementById("Fx3").value = f3*(xmid3s);
+                document.getElementById("Fx4").value = f4*(xmid4s); 
+
+                /*----------fx`2----------*/
+                fx21s=f1*((xmid1s)*(xmid1s));
+                fx22s=f2*((xmid2s)*(xmid2s));
+                fx23s=f3*((xmid3s)*(xmid3s));
+                fx24s=f4*((xmid4s)*(xmid4s)); 
+
+                document.getElementById("Fx21").value = fx21s;
+                document.getElementById("Fx22").value = fx22s;
+                document.getElementById("Fx23").value = fx23s;
+                document.getElementById("Fx24").value = fx24s; 
+
+                /*----------cf----------*/
+                document.getElementById("Cf1").value = f1;
+                document.getElementById("Cf2").value = f1+f2;
+                document.getElementById("Cf3").value = f1+f2+f3;
+                document.getElementById("Cf4").value = f1+f2+f3+f4; 
+
+                /*----------sums----------*/
+                
+                fsums= f1+f2+f3+f4 ;
+                cfsums= (f1)+(f1+f2)+(f1+f2+f3)+(f1+f2+f3+f4) ;
+                xsums= (xmid1s)+(xmid2s)+(xmid3s)+(xmid4s) ;
+                fxsums= (f1*(xmid1s))+(f2*(xmid2s))+(f3*(xmid3s))+(f4*(xmid4s)) ;
+                fx2sums= fx21s+fx22s+fx23s+fx24s ;
+
+                document.getElementById("Fsum").value = fsums ;
+                document.getElementById("Cfsum").value = cfsums;
+                document.getElementById("Xsum").value = xsums;
+                document.getElementById("Fxsum").value = fxsums;
+                document.getElementById("Fx2sum").value = fx2sums;
+                
+
+                /*----------d1 and d2----------*/
+                document.getElementById("D1").value = dc-du;
+                document.getElementById("D2").value = dc-dd;
+
+                /*----------main calculations----------*/
+                modes=l1+((dc-du)/((dc-du)+(dc-dd)))*((num2-num1));
+                medians=l1+(((((fsums)/2)-fmidean)/f2midean)*((num2-num1)));
+                means=(fxsums)/(fsums);
+                sds=Math.sqrt((fx2sums/fsums)-(means*means));
+                kp=((means-modes)/sds)
+
+                document.getElementById("Mode").value = modes;
+                document.getElementById("Median").value = medians;
+                document.getElementById("Mean").value = means;
+                document.getElementById("Sd").value = sds;
+                document.getElementById("Kp").value = kp;
+            }
+        </script>
+    </body>
+</html>
